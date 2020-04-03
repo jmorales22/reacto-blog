@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  background-color: hsla(0, 0%, 100%, 0.5);
+  color: blue;
+  padding: 10px;
+}
+.links {
+  color: blue;
 }
 
 .App-logo {
@@ -35,4 +41,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+ul {
+  list-style: none;
 }

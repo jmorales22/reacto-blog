@@ -12,5 +12,10 @@ router.get("/all", async function(req, res) {
   res.json(blogs);
 });
 
+router.get("/blog/:id?", async function(req, res) {
+  const { id } = req.params;
+  let blogs = await BlogModel.getId(id)
+  res.json(blogs);
+});
 
 module.exports = router;

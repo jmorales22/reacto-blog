@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import SingleBlog from './SingleBlog';
+import '../App.css';
 
 class Blog extends Component {
   state = {
@@ -26,19 +26,24 @@ class Blog extends Component {
     const { blogs, title } = this.state;
 
     return (
-      <div className="App">
-        <div>
-        <h1>{ title }</h1>
+      <div>
+      <h1>{ title} </h1>
+      <ul>
+        {blogs.length > 0 ? (
+        blogs.map(blogs => (
+        <li key={blogs.id}>
         <br/>
-            {blogs.map(blogs => (
-                <SingleBlog blogs={blogs}/>,
-                <Link to={`/blog/${blogs.title}`}>{blogs.title}</Link> 
-            ))}
-        </div>
-      </div>
-    );
+        <Link className="links" to={`/blog/${blogs.id}`}>{ blogs.title} </Link>
+        </li>
+        ))
+        ) : (
+        <li>No Issue Data</li>
+        )}
+    </ul>
+    </div>
+      );
+    }
   }
-}
 
 export default Blog;
 

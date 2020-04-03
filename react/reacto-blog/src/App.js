@@ -10,7 +10,7 @@ function App() {
       <div>
       <Router>
         <Route exact path='/' component={Blog} />
-        <Route path='/blog/:title?' component={SingleBlog}/>
+        <Route path='/blog/:id?' component={SingleBlog}/>
       </Router>
       </div>
     </div>

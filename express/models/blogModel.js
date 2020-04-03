@@ -17,6 +17,17 @@ class BlogModel {
             return error;
         }
     }
+    static async getId(id){
+        try {
+            const response = await db.any(`SELECT * FROM blog WHERE id=${id};`);
+            console.log('this is the id', id)
+            return response;
+        } catch(error) {
+            console.error('ERROR: ', error);
+            return error;
+        }
+    }
+    
 }
 
 module.exports = BlogModel;
