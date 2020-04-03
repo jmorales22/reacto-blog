@@ -1,6 +1,6 @@
 const express = require('express'),
   router = express.Router(),
-  blogModel = require('../models/blogModel');
+  BlogModel = require('../models/blogModel');
 
 
 router.get("/", async function(req, res) {
@@ -8,9 +8,8 @@ router.get("/", async function(req, res) {
 });
 
 router.get("/all", async function(req, res) {
-  let blogs = await blogModel.getBlogs()
+  let blogs = await BlogModel.getBlogs()
   res.json(blogs);
-  console.log(blogs)
 });
 
 

@@ -8,7 +8,7 @@ class BlogModel {
         this.content = content;
     }
 
-    async getBlogs(){
+    static async getBlogs(){
         try {
             const response = await db.any(`SELECT * FROM blog;`);
             return response;
